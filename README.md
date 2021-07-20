@@ -1,3 +1,193 @@
+```
+This is a personal development version of the awesome ml-workspace
+I will be updating the image regularly and only support gpu-flavor. 
+Up to date is here: [https://github.com/ml-tooling/ml-workspace]
+```
+
+<pre>
+
+████████╗     ██████╗     ██████╗      ██████╗ 
+╚══██╔══╝    ██╔═══██╗    ██╔══██╗    ██╔═══██╗
+   ██║       ██║   ██║    ██║  ██║    ██║   ██║
+   ██║       ██║   ██║    ██║  ██║    ██║   ██║
+   ██║       ╚██████╔╝    ██████╔╝    ╚██████╔╝
+   ╚═╝        ╚═════╝     ╚═════╝      ╚═════╝ 
+                                               
+</pre>
+
+## TODO's 
+
+### Update to Ubuntu 18.04
+- [X] Update Dockerfile for 18.04
+- [X] Build New Base Image and push to hub. ml-workspace uses 16.04.
+- [X] Fix gpu-flavor to use new image and update all for 18.04 
+- [X] Must change maintainer as ml-workspace is no longer base image
+- [ ] must remove/change branding as ml-workspace is no longer base image
+ 
+### Platform management dashboard
+- [ ] Knowledge base for every tool and library
+- [ ] A virtual assistant (bot) to help find the tool for the task
+- [ ] a Jupyter Notebook reference for every library and framework (if you don't use it loose it)
+
+### Apache Airflow or similar 
+- [ ] Research http://airflow.apache.org/index.html#  •
+- [ ] Research https://gtoonstra.github.io/etl-with-airflow/platform.html  
+- [ ] DAG Workflow Solution is needed. MLFlow may be all that's needed. Remember. KISS (Keep it simple stupid)
+
+### Project Lifecycle Management
+- [ ] Add to Tool Menu https://mlflow.org/docs/latest/index.html 
+- [ ] Install https://github.com/kubeflow/kubeflow never used, but loooks good on paper put into production for a few projects to compare and contrast with mlflow
+- [ ] Research https://github.com/apache/incubator-dlab to research
+
+### ETL Tools  
+- [ ] Research https://github.com/pentaho/pentaho-kettle to research
+- [ ] Research https://nifi.apache.org/ to research
+- [ ] Include https://github.com/mikewlange/sota-extractor useful day one
+- [ ] Research https://github.com/apache/incubator-gobblin (may be overkill or the solution needed)
+- [ ] ETL Solution 
+
+### Production deployement
+- [ ] Research https://github.com/apache/incubator-tvm TVM is a compiler stack for deep learning systems
+- [ ] Research https://pytorch.org/docs/stable/jit.html pytorch model serving. Easy to use framework for day one. 
+
+### Content Management
+- [ ] Find/build a soution to integrate a Knowledge base platform content
+- Perhaps MLFlow or Airflow can manage this. But expect to build a custom solution.
+- [ ] Research https://github.com/jupyter-incubator/contentmanagement (possible starting point, would need to build Lab extension)
+- [ ] Research https://github.com/lektor/lektor - static file content management (likly the way to go)
+- [ ] Research https://github.com/wagtail/wagtail - django always works.
+- [ ] Research https://github.com/sseffa/fullycms (possibly overkill)
+
+### Data Search
+- The goal is to have a single ui to query across all documents, data stores and models
+- [ ] Research https://github.com/daschl/grok
+- [ ] Research https://github.com/grafana/loki
+- [ ] Solution. 
+
+### Profiling
+- [ ] Research https://github.com/ironmussa/Bumblebee (new, but looks promising w/ https://github.com/ironmussa/Optimus)
+
+### Jupyter Kernals
+- [ ] Research Find or Build a golang kernal
+- [ ] Research https://github.com/gopherdata/gophernotes
+- [ ] Research https://github.com/yunabe/lgo
+
+### AutoML Tools 
+- [ ] Fix the reason https://autokeras.com/ was removed
+- [ ] Add https://github.com/automl/Auto-PyTorch
+- [ ] Add https://automl.github.io/auto-sklearn/master/
+- [ ] Add https://github.com/mikewlange/automl_service 
+- [ ] incluse add Autokears, Auto-PyTorch and adanet in the service
+
+### Blockchain (p2p) AI 
+- [ ] More of a back burner project. =
+- https://github.com/microsoft/0xDeCA10B  
+- -replace Etherium with a CRDT system like AXE - Make use of the GunDB ecosystem. It's the future
+
+### Distributed Learning
+- [ ] Reasearch https://github.com/ml-tooling/lazycluster
+- [ ] Reasearch https://github.com/OpenMined/PyGrid
+- [ ] integrate horovod into workflow for immediate use
+- [ ] Build a custom GunDb Distributed Learning Solution
+
+### HEP Tooling
+- [ ] Addhttps://github.com/go-hep/hep
+- [ ] Addhttps://github.com/scikit-hep/scikit-hep
+- [ ] Addhttps://github.com/cms-sw/cmssw
+
+### Graph Tooling
+- [ ] Addhttps://github.com/danielegrattarola/spektral
+- [ ] Addhttps://github.com/stellargraph/stellargraph
+
+### Pre-Trained Models for Transfer Learning
+- [ ] Add https://github.com/huggingface/transformers (everything from Huggingface)
+- [ ] Add GPT-2 https://github.com/openai/gpt-2
+- [ ] Add https://github.com/pytorch/fairseq
+
+### TPU Tooling for PyTorch
+- [ ] Add https://github.com/mikewlange/xla
+
+### New Tools & Libraries
+- [X] Add https://github.com/interpretml/interpret NOTE: expose port 7001 in the docker file. 
+Can always use 
+```
+from interpret.provider import InlineProvider
+from interpret import set_visualize_provider
+set_visualize_provider(InlineProvider())
+```
+- [X] Add https://github.com/interpretml/interpret-community
+- [X] Add https://github.com/ironmussa/Optimus (Brilliant)
+- [ ] Add https://github.com/mikewlange/upm
+- [ ] Add https://github.com/mikewlange/modin
+- [ ] image -> Latex -> mathml -> c function 
+img2latex with attention and beam search based on
+```
+@article{img2markup,
+  title={What You Get Is What You See: A Visual Markup Decompiler},
+  author={Yuntian Deng, Anssi Kanervisto, and Alexander M. Rush},
+  journal={ArXiv},
+  volume={http://arxiv.org/pdf/1609.04938v1.pdf}
+}
+```
+- [ ] add PDFExtract
+- [ ] addQ & A Generator
+- [ ] add Diagram To Model  - loosly based on https://arxiv.org/abs/1711.03543
+- [ ] add Content Summary Tools
+- [ ] add MathSteps https://github.com/mikewlange/mathsteps
+
+### Model Conversion Pipeline
+- Build an automated model conversion pipeline. For not impliment ONYX. 
+- https://github.com/mikewlange/deep-learning-model-convertor
+
+### Model Visualization
+- [ ] add https://github.com/lutzroeder/netron
+
+### Verify Licensing
+- [ ] Verify lisencing on every tool already part of the system. The original project did this well and documented propery.
+
+### Benchmarking / Evaluation
+- [ ] add https://github.com/paperswithcode/sotabench-eval
+- [ ] add https://github.com/facebookresearch/ParlAI/
+
+### MultiUser
+- [ ] Add https://github.com/ml-tooling/ml-hub
+
+### Consolidate images
+- [ ] remove r-flavor
+- [ ] merge spark-flavor and gpu-flavor
+- [ ] remove spark-flavor directories
+
+
+***
+
+
+![logo](https://github.com/ml-tooling/ml-workspace/raw/master/docs/images/ml-workspace-logo.png)
+
+
+<p align="center">
+    <strong>All-in-one web-based development environment for machine learning</strong>
+</p>
+
+<p align="center">
+    <a href="https://hub.docker.com/r/mltooling/ml-workspace" title="Docker Image Version"><img src="https://images.microbadger.com/badges/version/mltooling/ml-workspace.svg"></a>
+    <a href="https://hub.docker.com/r/mltooling/ml-workspace" title="Docker Pulls"><img src="https://img.shields.io/docker/pulls/mltooling/ml-workspace.svg"></a>
+    <a href="https://hub.docker.com/r/mltooling/ml-workspace" title="Docker Image Metadata"><img src="https://images.microbadger.com/badges/image/mltooling/ml-workspace.svg"></a>
+    <a href="https://github.com/ml-tooling/ml-workspace/blob/master/LICENSE" title="ML Workspace License"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg"></a>
+    <a href="https://gitter.im/ml-tooling/ml-workspace" title="Chat on Gitter"><img src="https://badges.gitter.im/ml-tooling/ml-workspace.svg"></a>
+    <a href="https://twitter.com/mltooling" title="ML Tooling on Twitter"><img src="https://img.shields.io/twitter/follow/mltooling.svg?style=social"></a>
+</p>
+
+<p align="center">
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#features">Features & Screenshots</a> •
+  <a href="#support">Support</a> •
+  <a href="https://github.com/ml-tooling/ml-workspace/issues/new?labels=bug&template=01_bug-report.md">Report a Bug</a> •
+  <a href="#faq">FAQ</a> •
+  <a href="#known-issues">Known Issues</a> •
+  <a href="#contribution">Contribution</a>
+</p>
+
+
 <h1 align="center">
     <a href="https://github.com/ml-tooling/ml-workspace" title="ML Workspace Home">
     <img width=50% alt="" src="https://github.com/ml-tooling/ml-workspace/raw/main/docs/images/ml-workspace-logo.png"> </a>
